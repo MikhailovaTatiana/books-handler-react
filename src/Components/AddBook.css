@@ -15,10 +15,12 @@
         color: white;
         margin-bottom: 1rem;
     }
+
     .add {
         background-color: #237d57;
         color: white;
     }
+
     .cancel {
         background-color: #5a5353;
         color: white;
@@ -52,21 +54,27 @@
                 box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.154);
             }
         }
+
         .cover-field {
             grid-area: cover;
         }
+
         .title-field {
             grid-area: title;
         }
+
         .author-field {
             grid-area: author;
         }
+
         .isbn-field {
             grid-area: isbn;
         }
+
         .genres {
             grid-area: genres;
         }
+
         .genre-field {
             grid-area: genres-field;
             display: flex;
@@ -79,9 +87,11 @@
                 align-self: flex-end;
             }
         }
+
         .rating-field {
             grid-area: rating;
         }
+
         .buttons-field {
             grid-area: buttons;
             display: flex;

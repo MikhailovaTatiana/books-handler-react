@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './App.css'
-import Book from './Components/Book';
-import AddBook from './Components/AddBook';
+import Book from './components/Book';
+import AddBook from './components/AddBook';
 import { BookInterface } from './utils/BookInterface';
 import { bookData } from './utils/bookData';
-import Button from './Components/Button';
+import Button from './components/Button';
 
 // Declaring component App
 function App() {
