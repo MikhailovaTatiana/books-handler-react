@@ -1,0 +1,95 @@
+.addBook-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.842);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    h3 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+    .add {
+        background-color: #237d57;
+        color: white;
+    }
+    .cancel {
+        background-color: #5a5353;
+        color: white;
+    }
+
+    .addBook-form {
+        padding: 3rem 5rem;
+        background-color: white;
+        display: grid;
+        gap: 1rem;
+        grid-template-areas:
+            "author author author author"
+            "cover cover cover cover"
+            "title title title title"
+            "genres genres genres genres"
+            "genres-field genres-field genres-field genres-field"
+            "isbn isbn isbn rating"
+            "buttons buttons buttons buttons";
+
+        label {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 12px;
+            width: 100%;
+            input {
+                width: 100%;
+                max-width: 300px;
+                height: 2rem;
+                border: none;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.154);
+            }
+        }
+        .cover-field {
+            grid-area: cover;
+        }
+        .title-field {
+            grid-area: title;
+        }
+        .author-field {
+            grid-area: author;
+        }
+        .isbn-field {
+            grid-area: isbn;
+        }
+        .genres {
+            grid-area: genres;
+        }
+        .genre-field {
+            grid-area: genres-field;
+            display: flex;
+            button {
+                padding: 0 1rem;
+                margin-left: 1rem;
+                display: inline-block;
+                text-wrap: nowrap;
+                height: 2rem;
+                align-self: flex-end;
+            }
+        }
+        .rating-field {
+            grid-area: rating;
+        }
+        .buttons-field {
+            grid-area: buttons;
+            display: flex;
+            gap: 1rem;
+            button {
+                height: 2rem;
+                width: 50%;
+            }
+        }
+    }
+}
