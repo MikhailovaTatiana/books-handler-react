@@ -18,6 +18,7 @@ function Book({ book, updateBook, deleteBook }: BookProps) {
     const [author, setAuthor] = useState<string>(book.author);
     const [isbn] = useState<number>(book.isbn);
     const [rating, setRating] = useState<number>(book.rating);
+    const [genres, setGenres] = useState<string>(book.genres ? book.genres.join(", ") : "");
 
     // Create a list of stars for the books rating
     const stars = [];
@@ -33,7 +34,7 @@ function Book({ book, updateBook, deleteBook }: BookProps) {
             title: title,
             author: author,
             isbn: isbn,
-            genres: book.genres,
+            genres: genres ? genres.split(",").map(genre => genre.trim()) : [],
             rating: rating,
             cover: book.cover
         }
@@ -67,7 +68,7 @@ function Book({ book, updateBook, deleteBook }: BookProps) {
                     <input defaultValue={title} onChange={(e) => setTitle(e.target.value)} id='newTitle' />
                     <input defaultValue={author} onChange={(e) => setAuthor(e.target.value)} id='newAuthor' />
                     <p>{book.isbn}</p>
-                    <p>Genres: {book.genres ? book.genres.join(", ") : "Not defined"}</p>
+                    <input defaultValue={genres} onChange={(e) => setGenres(e.target.value)} id='newGenres' />
                     {/* Update field for rating */}
                     <input max="5" min="1" type='number' defaultValue={rating} onChange={(e) => setRating(parseInt(e.target.value))} id='newRating' />
                 </section>
@@ -82,7 +83,7 @@ function Book({ book, updateBook, deleteBook }: BookProps) {
                     <h2>{book.title}</h2>
                     <p>{book.author}</p>
                     <p>{book.isbn}</p>
-                    <p>Genres: {book.genres ? book.genres.join(", ") : "Not defined"}</p>
+                    <p>Genres: {book.genres && book.genres.length > 0 ? book.genres.join(", ") : "Not defined"}</p>
                     <p>{stars}</p>
                 </section>
                 <Button handler={() => { setEdit(true) }} name="Edit" />
